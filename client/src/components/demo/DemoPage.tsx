@@ -66,33 +66,33 @@ const DemoPage: React.FC = () => {
               <h2 className="text-2xl font-bold mb-4">הטמעה באתר שלך</h2>
               <Card>
                 <CardContent className="p-6">
-                  <p className="mb-4">העתיקו את הקוד הבא ושלבו אותו בדף ה-HTML שלכם, לפני סגירת תגית ה-&lt;/body&gt;:</p>
+                  <div className="bg-amber-50 border-r-4 border-amber-400 p-4 mb-4">
+                    <h3 className="font-bold text-amber-800 mb-2">כתב ויתור חשוב</h3>
+                    <p className="text-sm text-amber-700">
+                      הורדת והטמעת קוד הנגישות מהווה הסכמה לכתב הויתור המשפטי. בעל האתר נושא באחריות הבלעדית לעמידה בדרישות החוק.
+                    </p>
+                    <a href="/terms.html" className="text-amber-800 font-bold mt-2 inline-block hover:underline">קרא את כתב הויתור המלא ותנאי השימוש</a>
+                  </div>
                   
-                  <Tabs defaultValue="basic" className="mb-4">
-                    <TabsList className="grid w-full grid-cols-2">
-                      <TabsTrigger value="basic">בסיסי</TabsTrigger>
-                      <TabsTrigger value="advanced">מתקדם</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="basic" className="mt-4">
-                      <div className="bg-gray-100 p-3 rounded-md overflow-auto text-left ltr-text">
-                        <pre className="text-xs">
-                          <code>{embeddableScript}</code>
-                        </pre>
-                      </div>
-                    </TabsContent>
-                    <TabsContent value="advanced" className="mt-4">
-                      <div className="bg-gray-100 p-3 rounded-md overflow-auto text-left ltr-text">
-                        <pre className="text-xs">
-                          <code>{advancedScript}</code>
-                        </pre>
-                      </div>
-                      <p className="mt-2 text-xs text-gray-600">
-                        תכונה data-position יכולה להיות: bottom-right (ברירת מחדל), bottom-left, top-right, או top-left
-                      </p>
-                    </TabsContent>
-                  </Tabs>
+                  <div className="bg-blue-50 border-r-4 border-blue-400 p-4 mb-4">
+                    <p className="text-sm text-blue-700">
+                      <strong>כלי זה תומך בדרישות תקן ישראלי 5568</strong> המבוסס על WCAG 2.0 ברמת AA
+                    </p>
+                    <a href="/wcag-compliance.html" className="text-blue-700 font-bold text-sm mt-1 inline-block hover:underline">
+                      לפרטים נוספים על התאימות לתקן &larr;
+                    </a>
+                  </div>
                   
-                  <div className="mt-4 text-sm">
+                  <p className="mb-4">לאחר אישור תנאי השימוש, תוכלו להטמיע את הקוד באתר שלכם:</p>
+                  
+                  <a href="/terms.html" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-md inline-flex items-center transition duration-300 mb-4">
+                    <span>אשר את התנאים וקבל את קוד ההטמעה</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  
+                  <div className="mt-2 text-sm">
                     <a href="/implementation-example" className="text-blue-600 hover:underline">
                       צפייה בדוגמת הטמעה מפורטת &larr;
                     </a>

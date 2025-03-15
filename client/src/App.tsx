@@ -14,11 +14,27 @@ function ImplementationExample() {
   return null;
 }
 
+function Terms() {
+  useEffect(() => {
+    window.location.href = '/terms.html';
+  }, []);
+  return null;
+}
+
+function WcagCompliance() {
+  useEffect(() => {
+    window.location.href = '/wcag-compliance.html';
+  }, []);
+  return null;
+}
+
 function Router() {
   return (
     <Switch>
       <Route path="/" component={DemoPage} />
       <Route path="/implementation-example" component={ImplementationExample} />
+      <Route path="/terms" component={Terms} />
+      <Route path="/wcag-compliance" component={WcagCompliance} />
       <Route component={NotFound} />
     </Switch>
   );
