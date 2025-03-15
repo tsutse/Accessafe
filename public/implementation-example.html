@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דוגמה להטמעת כלי נגישות בעברית</title>
+  <style>
+    body {
+      font-family: 'Heebo', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+    h2 {
+      color: #2c3e50;
+      margin-top: 30px;
+    }
+    code {
+      background-color: #f5f5f5;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-family: monospace;
+      display: block;
+      white-space: pre-wrap;
+      padding: 15px;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      direction: ltr;
+      text-align: left;
+    }
+    .note {
+      background-color: #fffbea;
+      border-left: 4px solid #f9cb56;
+      padding: 15px;
+      margin: 15px 0;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .feature-card {
+      flex: 1 0 45%;
+      background-color: #f5f7fa;
+      border-radius: 5px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .feature-card h3 {
+      margin-top: 0;
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+  <h1>דוגמה להטמעת כלי נגישות בעברית</h1>
+  
+  <p>
+    כלי הנגישות שלנו מאפשר לכל בעל אתר להוסיף תכונות נגישות מתקדמות לאתר שלו בקלות, בהתאם לתקני WCAG 2.1 ולחוק הנגישות הישראלי.
+  </p>
+
+  <h2>הטמעה בסיסית</h2>
+  <p>
+    פשוט הוסיפו את הקוד הבא לאתר שלכם, לפני סגירת תגית ה-body:
+  </p>
+  
+  <code>&lt;script src="https://your-domain.com/dist/hebrew-a11y.min.js" defer&gt;&lt;/script&gt;</code>
+  
+  <div class="note">
+    שימו לב: החלפת "your-domain.com" בכתובת השרת שלכם
+  </div>
+  
+  <h2>הטמעה מתקדמת עם הגדרות</h2>
+  <p>
+    ניתן להתאים את המיקום של כפתור הנגישות באמצעות התכונה data-position:
+  </p>
+  
+  <code>&lt;script src="https://your-domain.com/dist/hebrew-a11y.min.js" data-position="bottom-left" defer&gt;&lt;/script&gt;</code>
+  
+  <p>אפשרויות המיקום הזמינות:</p>
+  <ul>
+    <li><strong>bottom-right</strong> (ברירת מחדל)</li>
+    <li><strong>bottom-left</strong></li>
+    <li><strong>top-right</strong></li>
+    <li><strong>top-left</strong></li>
+  </ul>
+
+  <h2>תכונות נגישות</h2>
+  <div class="features">
+    <div class="feature-card">
+      <h3>התאמת גודל טקסט</h3>
+      <p>מאפשר להגדיל ולהקטין את גודל הטקסט באתר לנוחיות הקריאה.</p>
+    </div>
+    <div class="feature-card">
+      <h3>ניגודיות גבוהה</h3>
+      <p>משפר את הניגודיות בין טקסט לרקע לאנשים עם ליקויי ראייה.</p>
+    </div>
+    <div class="feature-card">
+      <h3>מצב שחור-לבן</h3>
+      <p>מציג את האתר בגווני אפור עבור משתמשים הסובלים מעיוורון צבעים.</p>
+    </div>
+    <div class="feature-card">
+      <h3>הדגשת קישורים</h3>
+      <p>מדגיש קישורים באתר כדי שיהיו קלים יותר לזיהוי ושימוש.</p>
+    </div>
+    <div class="feature-card">
+      <h3>ניווט מקלדת</h3>
+      <p>משפר את חווית המשתמשים המנווטים באמצעות המקלדת בלבד.</p>
+    </div>
+    <div class="feature-card">
+      <h3>סמן מוגדל</h3>
+      <p>מציג סמן עכבר גדול יותר לנוחות השימוש.</p>
+    </div>
+    <div class="feature-card">
+      <h3>עצירת אנימציות</h3>
+      <p>מבטל אנימציות באתר למשתמשים הרגישים לתנועה.</p>
+    </div>
+    <div class="feature-card">
+      <h3>הקראת טקסט</h3>
+      <p>תמיכה בהקראת טקסט בעברית לעזרה למשתמשים עם ליקויי ראייה.</p>
+    </div>
+  </div>
+
+  <h2>יתרונות</h2>
+  <ul>
+    <li>קל להטמעה ושימוש - דורש שורת קוד אחת בלבד</li>
+    <li>עומד בדרישות החוק הישראלי - מתאים לתקנות הנגישות</li>
+    <li>תמיכה מלאה בעברית וב-RTL - תכנון המתאים במיוחד לאתרים בעברית</li>
+    <li>קוד קל ולא פוגע בביצועי האתר - מהיר ויעיל</li>
+    <li>שומר העדפות משתמשים - זוכר את הגדרות המשתמש בין ביקורים</li>
+  </ul>
+
+  <!-- הטמעת כלי הנגישות כאן למטרת הדגמה -->
+  <script src="/dist/hebrew-a11y.min.js" defer></script>
+</body>
+</html>

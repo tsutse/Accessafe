@@ -1,3 +1,6 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
+
 /* Accessibility Widget Styles */
 :root {
   --a11y-primary: #424242;
@@ -6,9 +9,6 @@
   --a11y-light: #9E9E9E;
   --a11y-extralight: #F5F5F5;
 }
-
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
 
 .font-heebo {
   font-family: 'Heebo', Arial, sans-serif;

@@ -1,11 +1,11 @@
 import React from 'react';
 import AccessibilityWidget from '@/components/accessibility/AccessibilityWidget';
-import { createEmbeddableScript } from '@/lib/HebrewAccessibilityWidget';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const DemoPage: React.FC = () => {
-  const embeddableScript = createEmbeddableScript();
+  const embeddableScript = '<script src="https://your-domain.com/dist/hebrew-a11y.min.js" defer></script>';
+  const advancedScript = '<script src="https://your-domain.com/dist/hebrew-a11y.min.js" data-position="bottom-left" defer></script>';
 
   return (
     <div dir="rtl" lang="he" className="min-h-screen bg-gray-50 font-heebo">
@@ -66,20 +66,37 @@ const DemoPage: React.FC = () => {
               <h2 className="text-2xl font-bold mb-4">הטמעה באתר שלך</h2>
               <Card>
                 <CardContent className="p-6">
-                  <p className="mb-4">העתיקו את הקוד הבא ושלבו אותו בדף ה-HTML שלכם, בתוך תגית ה-&lt;body&gt;:</p>
+                  <p className="mb-4">העתיקו את הקוד הבא ושלבו אותו בדף ה-HTML שלכם, לפני סגירת תגית ה-&lt;/body&gt;:</p>
                   
-                  <Tabs defaultValue="script" className="mb-4">
-                    <TabsList className="grid w-full grid-cols-1">
-                      <TabsTrigger value="script">קוד להטמעה</TabsTrigger>
+                  <Tabs defaultValue="basic" className="mb-4">
+                    <TabsList className="grid w-full grid-cols-2">
+                      <TabsTrigger value="basic">בסיסי</TabsTrigger>
+                      <TabsTrigger value="advanced">מתקדם</TabsTrigger>
                     </TabsList>
-                    <TabsContent value="script" className="mt-4">
-                      <div className="bg-gray-100 p-3 rounded-md overflow-auto max-h-80 text-left ltr-text">
+                    <TabsContent value="basic" className="mt-4">
+                      <div className="bg-gray-100 p-3 rounded-md overflow-auto text-left ltr-text">
                         <pre className="text-xs">
                           <code>{embeddableScript}</code>
                         </pre>
                       </div>
                     </TabsContent>
+                    <TabsContent value="advanced" className="mt-4">
+                      <div className="bg-gray-100 p-3 rounded-md overflow-auto text-left ltr-text">
+                        <pre className="text-xs">
+                          <code>{advancedScript}</code>
+                        </pre>
+                      </div>
+                      <p className="mt-2 text-xs text-gray-600">
+                        תכונה data-position יכולה להיות: bottom-right (ברירת מחדל), bottom-left, top-right, או top-left
+                      </p>
+                    </TabsContent>
                   </Tabs>
+                  
+                  <div className="mt-4 text-sm">
+                    <a href="/implementation-example" className="text-blue-600 hover:underline">
+                      צפייה בדוגמת הטמעה מפורטת &larr;
+                    </a>
+                  </div>
 
                   <h3 className="text-lg font-bold mb-2">תכונות נגישות</h3>
                   <ul className="list-disc list-inside space-y-1 text-sm">
