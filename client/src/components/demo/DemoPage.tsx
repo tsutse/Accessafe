@@ -130,7 +130,7 @@ const DemoPage: React.FC = () => {
                       </svg>
                     </button>
                     <a 
-                      href="/terms.html" 
+                      href="/terms" 
                       target="_blank"
                       className="bg-gray-100 hover:bg-gray-200 text-gray-800 text-center py-3 px-6 rounded-md transition duration-300"
                     >
