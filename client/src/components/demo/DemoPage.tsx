@@ -32,8 +32,10 @@ const itemVariants = {
 };
 
 const DemoPage: React.FC = () => {
-  const embeddableScript = '<script src="https://hebrew-accessibility.pages.dev/dist/hebrew-a11y.min.js" defer></script>';
-  const advancedScript = '<script src="https://hebrew-accessibility.pages.dev/dist/hebrew-a11y.min.js" data-position="bottom-left" defer></script>';
+  // Current domain - update this when moving to production
+  const currentDomain = 'https://9cd20c98-9fdf-42ea-9b9c-a2c5e53e55e6-00-2603sgn2gz8kw.janeway.replit.dev';
+  const embeddableScript = `<script src="${currentDomain}/dist/hebrew-a11y.min.js" defer></script>`;
+  const advancedScript = `<script src="${currentDomain}/dist/hebrew-a11y.min.js" data-position="bottom-left" defer></script>`;
   const [activeTab, setActiveTab] = useState('basic');
   const [isScrolled, setIsScrolled] = useState(false);
   const [featureIndex, setFeatureIndex] = useState(0);
@@ -494,6 +496,7 @@ const DemoPage: React.FC = () => {
                     <div>
                       <strong className="block font-medium mb-1">הטמעה פשוטה</strong>
                       <p>העתק את הקוד והדבק אותו באתר שלך, בין תגיות <code className="bg-blue-100 px-1 rounded">&lt;head&gt;</code> או בסוף ה-<code className="bg-blue-100 px-1 rounded">&lt;body&gt;</code>.</p>
+                      <p className="mt-2 text-xs bg-blue-100 p-2 rounded">הערה: הדומיין הנוכחי הינו זמני לסביבת פיתוח ויוחלף בדומיין קבוע בעת מעבר לייצור.</p>
                     </div>
                   </div>
                 </div>
