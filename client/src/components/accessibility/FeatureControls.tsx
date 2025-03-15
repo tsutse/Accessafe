@@ -31,13 +31,13 @@ const FeatureControls: React.FC = () => {
     icon: React.ReactNode;
   }) => (
     <div className="flex items-center justify-between p-2 rounded-lg hover:bg-blue-50 transition-colors mb-2">
-      <div className="flex items-center">
-        <div className="mr-2 text-blue-600">
+      <div className="flex items-center flex-1 min-w-0">
+        <div className="shrink-0 mr-2 text-blue-600">
           {icon}
         </div>
-        <label htmlFor={id} className="text-sm font-medium cursor-pointer">{label}</label>
+        <label htmlFor={id} className="text-sm font-medium cursor-pointer truncate">{label}</label>
       </div>
-      <label className="relative inline-flex items-center cursor-pointer">
+      <label className="relative inline-flex items-center cursor-pointer ml-2">
         <input 
           type="checkbox" 
           id={id} 
@@ -118,7 +118,9 @@ const FeatureControls: React.FC = () => {
       {/* Font Size */}
       <div className="bg-white rounded-xl p-3 border border-gray-100 shadow-sm">
         <div className="flex items-center mb-3">
-          {icons.fontSize}
+          <div className="shrink-0">
+            {icons.fontSize}
+          </div>
           <h3 className="font-bold text-blue-900 mr-2 text-base">גודל טקסט</h3>
         </div>
         <div className="flex items-center justify-between bg-gray-50 rounded-lg p-2">
@@ -129,7 +131,7 @@ const FeatureControls: React.FC = () => {
           >
             <span className="text-xl font-bold">-</span>
           </button>
-          <div className="text-center font-medium text-blue-700 text-lg bg-white py-1 px-4 rounded-md shadow-sm border border-blue-100">
+          <div className="text-center font-medium text-blue-700 text-lg bg-white py-1 px-3 sm:px-4 rounded-md shadow-sm border border-blue-100 mx-1 min-w-[60px]">
             {settings.fontSize}%
           </div>
           <button 

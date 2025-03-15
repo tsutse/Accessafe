@@ -1,4 +1,5 @@
 import React from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface AccessibilityButtonProps {
   onClick: () => void;
@@ -6,11 +7,15 @@ interface AccessibilityButtonProps {
 }
 
 const AccessibilityButton: React.FC<AccessibilityButtonProps> = ({ onClick, isOpen }) => {
+  const isMobile = useIsMobile();
+  
   return (
     <button 
       aria-label="תפריט נגישות"
       className={`
-        flex items-center justify-center w-14 h-14 
+        fixed z-50
+        flex items-center justify-center 
+        ${isMobile ? 'w-12 h-12 bottom-3 right-3' : 'w-14 h-14 bottom-5 right-5'}
         bg-gradient-to-br from-blue-600 to-indigo-700 
         text-white rounded-full 
         shadow-lg
@@ -29,8 +34,8 @@ const AccessibilityButton: React.FC<AccessibilityButtonProps> = ({ onClick, isOp
         {/* Accessibility icon with subtle animation */}
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
-          width="28" 
-          height="28" 
+          width={isMobile ? "24" : "28"} 
+          height={isMobile ? "24" : "28"}
           viewBox="0 0 24 24" 
           fill="none" 
           stroke="currentColor" 

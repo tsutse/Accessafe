@@ -27,6 +27,17 @@ const AccessibilityWidget: React.FC<AccessibilityWidgetProps> = ({
       }
     };
 
+    // Add ARIA message when panel is opened
+    if (isOpen) {
+      const ariaLiveRegion = document.getElementById('a11y-status');
+      if (ariaLiveRegion) {
+        ariaLiveRegion.textContent = 'נפתח פאנל הגדרות נגישות';
+        setTimeout(() => {
+          if (ariaLiveRegion) ariaLiveRegion.textContent = '';
+        }, 1000);
+      }
+    }
+
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('keydown', handleEscKey);
     
@@ -36,22 +47,21 @@ const AccessibilityWidget: React.FC<AccessibilityWidgetProps> = ({
     };
   }, [isOpen, togglePanel]);
 
-  const positionClass = {
-    'bottom-right': 'bottom-5 right-5',
-    'bottom-left': 'bottom-5 left-5',
-    'top-right': 'top-5 right-5',
-    'top-left': 'top-5 left-5'
-  }[position];
-
   return (
-    <div 
-      ref={widgetRef}
-      className={`fixed z-50 ${positionClass} transition-all duration-300 ease-in-out`}
-      data-state={isOpen ? 'open' : 'closed'}
-    >
-      <AccessibilityButton onClick={togglePanel} isOpen={isOpen} />
-      <AccessibilityPanel isOpen={isOpen} position={position} />
-    </div>
+    <>
+      {/* ARIA live region for accessibility announcements */}
+      <div id="a11y-status" className="sr-only" aria-live="polite" aria-atomic="true"></div>
+      
+      {/* Main Widget Container - only contains the button */}
+      <div 
+        ref={widgetRef}
+        className="fixed z-50"
+        data-state={isOpen ? 'open' : 'closed'}
+      >
+        <AccessibilityButton onClick={togglePanel} isOpen={isOpen} />
+        <AccessibilityPanel isOpen={isOpen} position={position} />
+      </div>
+    </>
   );
 };
 
