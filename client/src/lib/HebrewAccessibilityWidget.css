@@ -47,6 +47,7 @@
   background-color: var(--a11y-primary);
   color: white;
   border: 2px solid white;
+  outline: 1px solid rgba(0, 0, 0, 0.1); /* Extra outline for better contrast */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,7 +260,7 @@ input:checked + .a11y-slider:before {
   padding: 12px;
   margin-top: 16px;
   background-color: var(--a11y-primary);
-  color: white;
+  color: white !important; /* Force white text color for better visibility */
   border: none;
   border-radius: 8px;
   font-size: 14px;

@@ -7,13 +7,17 @@ const DemoPage: React.FC = () => {
   const embeddableScript = '<script src="https://your-domain.com/dist/hebrew-a11y.min.js" defer></script>';
   const advancedScript = '<script src="https://your-domain.com/dist/hebrew-a11y.min.js" data-position="bottom-left" defer></script>';
 
-  const downloadScript = () => {
-    const script = document.createElement('a');
-    script.href = '/dist/hebrew-a11y.min.js';
-    script.download = 'hebrew-a11y.min.js';
-    document.body.appendChild(script);
-    script.click();
-    document.body.removeChild(script);
+  // Function to copy appropriate script based on selected tab
+  const copyScript = (advanced = false) => {
+    const scriptToCopy = advanced ? advancedScript : embeddableScript;
+    navigator.clipboard.writeText(scriptToCopy)
+      .then(() => {
+        alert('הקוד הועתק ללוח!');
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+        alert('העתקה נכשלה, נסה להעתיק ידנית');
+      });
   };
 
   return (
@@ -40,7 +44,7 @@ const DemoPage: React.FC = () => {
                     <p className="text-sm text-blue-700">
                       <strong>הכלי תומך בדרישות תקן ישראלי 5568</strong> המבוסס על WCAG 2.0 ברמת AA
                     </p>
-                    <a href="wcag-compliance.html" className="text-blue-700 font-bold text-sm mt-1 inline-block hover:underline">
+                    <a href="/wcag-compliance.html" target="_blank" className="text-blue-700 font-bold text-sm mt-1 inline-block hover:underline">
                       לפרטים נוספים על התאימות לתקן &larr;
                     </a>
                   </div>
@@ -87,7 +91,7 @@ const DemoPage: React.FC = () => {
                     <p className="text-sm text-amber-700">
                       הורדת והטמעת קוד הנגישות מהווה הסכמה לכתב הויתור המשפטי. בעל האתר נושא באחריות הבלעדית לעמידה בדרישות החוק.
                     </p>
-                    <a href="terms.html" className="text-amber-800 font-bold mt-2 inline-block hover:underline">קרא את כתב הויתור המלא ותנאי השימוש</a>
+                    <a href="/terms.html" target="_blank" className="text-amber-800 font-bold mt-2 inline-block hover:underline">קרא את כתב הויתור המלא ותנאי השימוש</a>
                   </div>
                   
                   <Tabs defaultValue="basic" className="mb-6">
@@ -116,16 +120,29 @@ const DemoPage: React.FC = () => {
                   
                   <div className="grid grid-cols-1 gap-3 mb-6">
                     <button 
-                      onClick={downloadScript} 
+                      onClick={() => {
+                        // Copy the script to clipboard
+                        navigator.clipboard.writeText(embeddableScript)
+                          .then(() => {
+                            // Show a simple alert or you could use a toast notification
+                            alert('הקוד הועתק ללוח!');
+                          })
+                          .catch(err => {
+                            console.error('Failed to copy: ', err);
+                            alert('העתקה נכשלה, נסה להעתיק ידנית');
+                          });
+                      }} 
                       className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md inline-flex items-center justify-center transition duration-300"
                     >
-                      <span>הורד את קובץ הסקריפט</span>
+                      <span>העתק קוד להטמעה</span>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                        <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
+                        <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
                       </svg>
                     </button>
                     <a 
-                      href="terms.html" 
+                      href="/terms.html" 
+                      target="_blank"
                       className="bg-gray-100 hover:bg-gray-200 text-gray-800 text-center py-3 px-6 rounded-md transition duration-300"
                     >
                       קרא את התנאים וכתב הויתור
