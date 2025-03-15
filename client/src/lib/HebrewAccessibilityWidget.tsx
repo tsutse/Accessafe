@@ -6,6 +6,8 @@
  * on any website.
  */
 
+import './HebrewAccessibilityWidget.css';
+
 class HebrewAccessibilityTool {
   private container: HTMLElement | null = null;
   private settings = {
@@ -59,7 +61,7 @@ class HebrewAccessibilityTool {
     // Add the panel header
     const panelHeader = document.createElement('div');
     panelHeader.className = 'a11y-panel-header';
-    panelHeader.innerHTML = '<h2>הגדרות נגישות</h2>';
+    panelHeader.innerHTML = '<h2>הגדרות נגישות</h2><p class="a11y-compliance">בהתאם לתקנה 5568</p>';
     panel.appendChild(panelHeader);
 
     // Add the panel content

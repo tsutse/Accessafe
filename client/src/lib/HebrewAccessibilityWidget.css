@@ -1,0 +1,342 @@
+/* Main accessibility widget styles */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
+
+:root {
+  --a11y-primary: #3b82f6;
+  --a11y-primary-dark: #2563eb;
+  --a11y-dark: #1e293b;
+  --a11y-light: #f8fafc;
+  --a11y-accent: #3b82f6;
+  --a11y-border-radius: 12px;
+  --a11y-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.a11y-widget {
+  position: fixed;
+  z-index: 9999;
+  font-family: 'Heebo', Arial, sans-serif;
+  transition: all 0.3s ease;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.a11y-widget.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.a11y-widget.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}
+
+.a11y-widget.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.a11y-widget.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.a11y-toggle-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--a11y-primary);
+  color: white;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--a11y-box-shadow);
+  transition: all 0.3s ease;
+}
+
+.a11y-toggle-btn:hover {
+  background-color: var(--a11y-primary-dark);
+  transform: translateY(-2px);
+}
+
+.a11y-toggle-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5), var(--a11y-box-shadow);
+}
+
+[data-state="open"] .a11y-toggle-btn {
+  transform: rotate(90deg);
+}
+
+.a11y-panel {
+  display: none;
+  width: 320px;
+  border-radius: var(--a11y-border-radius);
+  background-color: white;
+  box-shadow: var(--a11y-box-shadow);
+  overflow: hidden;
+  direction: rtl;
+  text-align: right;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+[data-state="open"] .a11y-panel {
+  display: block;
+  position: absolute;
+}
+
+.bottom-right[data-state="open"] .a11y-panel {
+  bottom: 70px;
+  right: 0;
+}
+
+.bottom-left[data-state="open"] .a11y-panel {
+  bottom: 70px;
+  left: 0;
+}
+
+.top-right[data-state="open"] .a11y-panel {
+  top: 70px;
+  right: 0;
+}
+
+.top-left[data-state="open"] .a11y-panel {
+  top: 70px;
+  left: 0;
+}
+
+.a11y-panel-header {
+  background-color: var(--a11y-primary);
+  color: white;
+  padding: 16px 20px;
+}
+
+.a11y-panel-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.a11y-compliance {
+  margin: 5px 0 0 0;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.a11y-panel-content {
+  padding: 20px;
+}
+
+.a11y-section {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.a11y-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.a11y-section h3 {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--a11y-dark);
+}
+
+.a11y-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.a11y-controls button {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid #cbd5e1;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.a11y-controls button:hover {
+  background-color: var(--a11y-primary);
+  color: white;
+  border-color: var(--a11y-primary);
+}
+
+.a11y-controls span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.a11y-toggle-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.a11y-toggle-control:hover {
+  background-color: #f1f5f9;
+}
+
+.a11y-toggle-control:last-child {
+  margin-bottom: 0;
+}
+
+.a11y-toggle-control label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.a11y-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.a11y-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.a11y-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #cbd5e1;
+  transition: .4s;
+  border-radius: 24px;
+}
+
+.a11y-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .a11y-slider {
+  background-color: var(--a11y-accent);
+}
+
+input:focus + .a11y-slider {
+  box-shadow: 0 0 1px var(--a11y-accent);
+}
+
+input:checked + .a11y-slider:before {
+  transform: translateX(24px);
+}
+
+.a11y-reset-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  background-color: var(--a11y-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.a11y-reset-btn:hover {
+  background-color: var(--a11y-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Accessibility Classes */
+.a11y-high-contrast {
+  filter: contrast(150%);
+}
+
+.a11y-grayscale {
+  filter: grayscale(100%);
+}
+
+.a11y-link-highlight a {
+  text-decoration: underline !important;
+  font-weight: bold !important;
+  color: #0000FF !important;
+}
+
+.a11y-big-cursor,
+.a11y-big-cursor * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="white" stroke="black" stroke-width="4"/></svg>') 16 16, auto !important;
+}
+
+.a11y-no-animations *,
+.a11y-no-animations *:before,
+.a11y-no-animations *:after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.a11y-keyboard-nav :focus {
+  outline: 3px solid #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4) !important;
+}
+
+.a11y-tts-focus {
+  outline: 3px solid #3b82f6 !important;
+  background-color: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Accessibility Icon */
+.a11y-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 640px) {
+  .a11y-panel {
+    width: 300px;
+    max-width: calc(100vw - 40px);
+  }
+
+  .a11y-toggle-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .a11y-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .bottom-right[data-state="open"] .a11y-panel,
+  .bottom-left[data-state="open"] .a11y-panel {
+    bottom: 60px;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+  }
+}

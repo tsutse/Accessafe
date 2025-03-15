@@ -7,54 +7,70 @@ const DemoPage: React.FC = () => {
   const embeddableScript = '<script src="https://your-domain.com/dist/hebrew-a11y.min.js" defer></script>';
   const advancedScript = '<script src="https://your-domain.com/dist/hebrew-a11y.min.js" data-position="bottom-left" defer></script>';
 
+  const downloadScript = () => {
+    const script = document.createElement('a');
+    script.href = '/dist/hebrew-a11y.min.js';
+    script.download = 'hebrew-a11y.min.js';
+    document.body.appendChild(script);
+    script.click();
+    document.body.removeChild(script);
+  };
+
   return (
     <div dir="rtl" lang="he" className="min-h-screen bg-gray-50 font-heebo">
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-5xl mx-auto px-4 py-5 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">כלי נגישות לאתרים בעברית</h1>
-          <p className="mt-2 text-gray-600">כלי חינמי בהתאם לחוקי הנגישות הישראליים ותקן WCAG 2.1</p>
+          <h1 className="text-3xl font-bold bg-gradient-to-l from-blue-600 to-indigo-700 bg-clip-text text-transparent">כלי נגישות לאתרים בעברית</h1>
+          <p className="mt-2 text-gray-600">כלי חינמי בהתאם לחוקי הנגישות הישראליים ותקן WCAG 2.0 AA</p>
         </div>
       </header>
 
       <main className="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="md:col-span-1">
             <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">דוגמה לאתר עם כלי הנגישות</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-800">אודות הכלי</h2>
               <Card>
-                <CardContent className="p-0">
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">מידע על החברה</h3>
-                    <p className="mb-4">ברוכים הבאים לאתר החברה שלנו. אנו מספקים שירותים איכותיים ללקוחות שלנו כבר למעלה מעשר שנים. המטרה שלנו היא להבטיח שכל לקוח מקבל את השירות הטוב ביותר.</p>
-                    <p>צוות המומחים שלנו עומד לרשותכם בכל שאלה או בקשה. אנחנו מאמינים בשירות אישי, מקצועי ואדיב.</p>
+                <CardContent className="p-6">
+                  <p className="mb-6 text-gray-700 leading-relaxed">
+                    הכלי מספק פתרון נגישות מלא עבור אתרי אינטרנט בעברית, מאפשר למשתמשים להתאים את חווית הגלישה לצרכיהם, ומסייע לבעלי אתרים לעמוד בדרישות תקן ישראלי 5568 ו-WCAG 2.0 ברמת AA.
+                  </p>
+                  
+                  <div className="bg-blue-50 border-r-4 border-blue-400 p-4 mb-6">
+                    <p className="text-sm text-blue-700">
+                      <strong>הכלי תומך בדרישות תקן ישראלי 5568</strong> המבוסס על WCAG 2.0 ברמת AA
+                    </p>
+                    <a href="wcag-compliance.html" className="text-blue-700 font-bold text-sm mt-1 inline-block hover:underline">
+                      לפרטים נוספים על התאימות לתקן &larr;
+                    </a>
                   </div>
-                  <div className="border-t p-6">
-                    <h3 className="text-xl font-bold mb-2">השירותים שלנו</h3>
-                    <ul className="list-disc list-inside mb-4 space-y-1">
-                      <li>ייעוץ מקצועי בתחום העסקי</li>
-                      <li>פיתוח אפליקציות מותאמות אישית</li>
-                      <li>שירותי אבטחת מידע</li>
-                      <li>אסטרטגיית שיווק דיגיטלי</li>
-                    </ul>
-                    <a href="#" className="text-blue-600 hover:underline">קראו עוד על השירותים שלנו</a>
-                  </div>
-                  <div className="border-t p-6">
-                    <h3 className="text-xl font-bold mb-2">צור קשר</h3>
-                    <form>
-                      <div className="mb-4">
-                        <label htmlFor="name" className="block mb-2 font-medium">שם מלא</label>
-                        <input type="text" id="name" className="w-full p-2 border border-gray-300 rounded" required />
-                      </div>
-                      <div className="mb-4">
-                        <label htmlFor="email" className="block mb-2 font-medium">דואר אלקטרוני</label>
-                        <input type="email" id="email" className="w-full p-2 border border-gray-300 rounded" required />
-                      </div>
-                      <div className="mb-4">
-                        <label htmlFor="message" className="block mb-2 font-medium">הודעה</label>
-                        <textarea id="message" rows={4} className="w-full p-2 border border-gray-300 rounded" required></textarea>
-                      </div>
-                      <button type="button" className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">שלח הודעה</button>
-                    </form>
+                  
+                  <h3 className="text-lg font-bold mb-3 text-gray-800">תכונות עיקריות</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                    <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                      <h4 className="font-bold text-blue-700">התאמת גודל טקסט</h4>
+                      <p className="text-sm text-gray-600">אפשרות להגדיל או להקטין את גודל הטקסט באתר</p>
+                    </div>
+                    <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                      <h4 className="font-bold text-blue-700">ניגודיות גבוהה</h4>
+                      <p className="text-sm text-gray-600">שיפור הניגודיות בין טקסטים לרקע</p>
+                    </div>
+                    <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                      <h4 className="font-bold text-blue-700">מצב שחור-לבן</h4>
+                      <p className="text-sm text-gray-600">מסייע לאנשים עם עיוורון צבעים</p>
+                    </div>
+                    <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                      <h4 className="font-bold text-blue-700">הדגשת קישורים</h4>
+                      <p className="text-sm text-gray-600">להקלה על ניווט באתר</p>
+                    </div>
+                    <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                      <h4 className="font-bold text-blue-700">ניווט מקלדת</h4>
+                      <p className="text-sm text-gray-600">תמיכה משופרת בניווט באמצעות מקלדת</p>
+                    </div>
+                    <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm">
+                      <h4 className="font-bold text-blue-700">הקראת טקסט</h4>
+                      <p className="text-sm text-gray-600">תמיכה בהקראת תוכן בעברית</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -63,60 +79,85 @@ const DemoPage: React.FC = () => {
 
           <div className="md:col-span-1">
             <section className="sticky top-8">
-              <h2 className="text-2xl font-bold mb-4">הטמעה באתר שלך</h2>
+              <h2 className="text-2xl font-bold mb-4 text-gray-800">הטמעה באתר שלך</h2>
               <Card>
                 <CardContent className="p-6">
-                  <div className="bg-amber-50 border-r-4 border-amber-400 p-4 mb-4">
+                  <div className="bg-amber-50 border-r-4 border-amber-400 p-4 mb-6">
                     <h3 className="font-bold text-amber-800 mb-2">כתב ויתור חשוב</h3>
                     <p className="text-sm text-amber-700">
                       הורדת והטמעת קוד הנגישות מהווה הסכמה לכתב הויתור המשפטי. בעל האתר נושא באחריות הבלעדית לעמידה בדרישות החוק.
                     </p>
-                    <a href="/terms.html" className="text-amber-800 font-bold mt-2 inline-block hover:underline">קרא את כתב הויתור המלא ותנאי השימוש</a>
+                    <a href="terms.html" className="text-amber-800 font-bold mt-2 inline-block hover:underline">קרא את כתב הויתור המלא ותנאי השימוש</a>
                   </div>
                   
-                  <div className="bg-blue-50 border-r-4 border-blue-400 p-4 mb-4">
-                    <p className="text-sm text-blue-700">
-                      <strong>כלי זה תומך בדרישות תקן ישראלי 5568</strong> המבוסס על WCAG 2.0 ברמת AA
-                    </p>
-                    <a href="/wcag-compliance.html" className="text-blue-700 font-bold text-sm mt-1 inline-block hover:underline">
-                      לפרטים נוספים על התאימות לתקן &larr;
+                  <Tabs defaultValue="basic" className="mb-6">
+                    <TabsList className="grid w-full grid-cols-2">
+                      <TabsTrigger value="basic">קוד בסיסי</TabsTrigger>
+                      <TabsTrigger value="advanced">קוד מתקדם</TabsTrigger>
+                    </TabsList>
+                    <TabsContent value="basic" className="mt-4">
+                      <div className="bg-gray-100 p-4 rounded-md overflow-auto text-left ltr-text font-mono">
+                        <pre className="text-sm break-all whitespace-pre-wrap">
+                          {embeddableScript}
+                        </pre>
+                      </div>
+                    </TabsContent>
+                    <TabsContent value="advanced" className="mt-4">
+                      <div className="bg-gray-100 p-4 rounded-md overflow-auto text-left ltr-text font-mono">
+                        <pre className="text-sm break-all whitespace-pre-wrap">
+                          {advancedScript}
+                        </pre>
+                      </div>
+                      <p className="mt-2 text-xs text-gray-600">
+                        תכונה data-position יכולה להיות: bottom-right (ברירת מחדל), bottom-left, top-right, או top-left
+                      </p>
+                    </TabsContent>
+                  </Tabs>
+                  
+                  <div className="grid grid-cols-1 gap-3 mb-6">
+                    <button 
+                      onClick={downloadScript} 
+                      className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md inline-flex items-center justify-center transition duration-300"
+                    >
+                      <span>הורד את קובץ הסקריפט</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </button>
+                    <a 
+                      href="terms.html" 
+                      className="bg-gray-100 hover:bg-gray-200 text-gray-800 text-center py-3 px-6 rounded-md transition duration-300"
+                    >
+                      קרא את התנאים וכתב הויתור
                     </a>
                   </div>
                   
-                  <p className="mb-4">לאחר אישור תנאי השימוש, תוכלו להטמיע את הקוד באתר שלכם:</p>
-                  
-                  <a href="/terms.html" className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-md inline-flex items-center transition duration-300 mb-4">
-                    <span>אשר את התנאים וקבל את קוד ההטמעה</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </a>
-                  
-                  <div className="mt-2 text-sm">
-                    <a href="/implementation-example" className="text-blue-600 hover:underline">
-                      צפייה בדוגמת הטמעה מפורטת &larr;
-                    </a>
-                  </div>
-
-                  <h3 className="text-lg font-bold mb-2">תכונות נגישות</h3>
-                  <ul className="list-disc list-inside space-y-1 text-sm">
-                    <li>התאמת גודל טקסט</li>
-                    <li>ניגודיות גבוהה</li>
-                    <li>מצב שחור-לבן</li>
-                    <li>הדגשת קישורים</li>
-                    <li>ניווט מקלדת</li>
-                    <li>סמן מוגדל</li>
-                    <li>עצירת אנימציות</li>
-                    <li>הקראת טקסט בעברית</li>
-                  </ul>
-                  
-                  <h3 className="text-lg font-bold mt-4 mb-2">יתרונות</h3>
-                  <ul className="list-disc list-inside space-y-1 text-sm">
-                    <li>קל להטמעה ושימוש</li>
-                    <li>עומד בדרישות החוק הישראלי</li>
-                    <li>תמיכה מלאה בעברית וב-RTL</li>
-                    <li>קוד קל ולא פוגע בביצועי האתר</li>
-                    <li>שומר העדפות משתמשים</li>
+                  <h3 className="text-lg font-bold mt-6 mb-3 text-gray-800">יתרונות</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-green-500 mt-0.5 ml-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-gray-700">התאמה מלאה לדרישות החוק הישראלי</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-green-500 mt-0.5 ml-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-gray-700">תמיכה מלאה בעברית ובדפדפנים מובילים</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-green-500 mt-0.5 ml-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-gray-700">קוד קל וקטן שאינו פוגע בביצועי האתר</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="h-5 w-5 text-green-500 mt-0.5 ml-2 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-gray-700">שומר העדפות משתמשים בין ביקורים</span>
+                    </li>
                   </ul>
                 </CardContent>
               </Card>
