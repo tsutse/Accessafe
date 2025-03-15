@@ -1,0 +1,58 @@
+/* Accessibility Widget Styles */
+:root {
+  --a11y-primary: #424242;
+  --a11y-dark: #121212;
+  --a11y-medium: #424242;
+  --a11y-light: #9E9E9E;
+  --a11y-extralight: #F5F5F5;
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap');
+
+.font-heebo {
+  font-family: 'Heebo', Arial, sans-serif;
+}
+
+/* Accessibility Classes */
+.a11y-high-contrast {
+  filter: contrast(150%);
+}
+
+.a11y-grayscale {
+  filter: grayscale(100%);
+}
+
+.a11y-link-highlight a {
+  text-decoration: underline !important;
+  font-weight: bold !important;
+  color: #0000FF !important;
+}
+
+.a11y-big-cursor,
+.a11y-big-cursor * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="white" stroke="black" stroke-width="4"/></svg>') 16 16, auto !important;
+}
+
+.a11y-no-animations *,
+.a11y-no-animations *:before,
+.a11y-no-animations *:after {
+  animation: none !important;
+  transition: none !important;
+}
+
+.a11y-keyboard-nav :focus {
+  outline: 3px solid #1E90FF !important;
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.5) !important;
+}
+
+.a11y-tts-focus {
+  outline: 3px solid #FFD700 !important;
+  background-color: rgba(255, 215, 0, 0.2) !important;
+}
+
+/* RTL Specific Styling */
+[dir="rtl"] .ltr-text {
+  direction: ltr;
+  text-align: left;
+}
