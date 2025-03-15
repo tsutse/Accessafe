@@ -210,70 +210,105 @@ const DemoPage: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="relative"
             >
-              <animated.div style={floatAnimation} className="relative z-10">
-                <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
-                  {/* Browser-like header */}
-                  <div className="bg-gray-100 p-3 border-b border-gray-200 flex items-center">
-                    <div className="flex space-x-2 space-x-reverse">
-                      <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+              <div className="relative">
+                <animated.div 
+                  style={floatAnimation} 
+                  className="absolute -z-10 right-0 top-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-30 transform -translate-x-1/2 -translate-y-1/4"
+                ></animated.div>
+                
+                {/* Device mockup */}
+                <div className="relative mx-auto max-w-sm md:max-w-md">
+                  <div className="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200">
+                    {/* Browser-like header */}
+                    <div className="bg-gray-100 p-2 border-b border-gray-200 flex items-center">
+                      <div className="flex space-x-1.5 space-x-reverse mr-2">
+                        <div className="w-2.5 h-2.5 bg-red-400 rounded-full"></div>
+                        <div className="w-2.5 h-2.5 bg-yellow-400 rounded-full"></div>
+                        <div className="w-2.5 h-2.5 bg-green-400 rounded-full"></div>
+                      </div>
+                      <div className="flex-1 text-center text-xs text-gray-500">עמוד דוגמה</div>
                     </div>
-                    <div className="flex-1 text-center text-xs text-gray-500">כלי נגישות לאתרים בעברית</div>
-                  </div>
-                  
-                  {/* Mockup website content */}
-                  <div className="relative">
-                    <motion.div 
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.6 }}
-                      className="absolute bottom-4 right-4 z-20 w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full shadow-lg flex items-center justify-center text-white"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 2a4 4 0 0 1 4 4M5 10a7 7 0 0 1 7-7"></path>
-                        <path d="M5 10a7 7 0 0 0 7 7"></path>
-                        <path d="M12 17a7 7 0 0 0 7-7"></path>
-                        <path d="M12 17v5"></path>
-                        <line x1="5" y1="10" x2="19" y2="10"></line>
-                      </svg>
-                    </motion.div>
                     
-                    <div className="p-6 min-h-[300px]">
-                      {/* Fake website content */}
-                      <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
-                      <div className="h-4 bg-gray-200 rounded w-full mb-3"></div>
-                      <div className="h-4 bg-gray-200 rounded w-5/6 mb-3"></div>
-                      <div className="h-4 bg-gray-200 rounded w-4/5 mb-6"></div>
-                      
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="h-20 bg-gray-100 rounded"></div>
-                        <div className="h-20 bg-gray-100 rounded"></div>
+                    {/* Website mockup */}
+                    <div className="p-4">
+                      <div className="flex justify-between items-center mb-4">
+                        <div className="w-24 h-6 bg-blue-600 rounded"></div>
+                        <div className="flex space-x-2 space-x-reverse">
+                          <div className="w-6 h-6 bg-gray-200 rounded"></div>
+                          <div className="w-6 h-6 bg-gray-200 rounded"></div>
+                        </div>
                       </div>
                       
-                      <div className="h-10 bg-blue-100 rounded w-1/3 mt-6 mx-auto"></div>
+                      <div className="h-5 bg-gray-200 rounded-full w-4/5 mb-3"></div>
+                      <div className="h-5 bg-gray-200 rounded-full w-full mb-3"></div>
+                      <div className="h-5 bg-gray-200 rounded-full w-5/6 mb-6"></div>
+                      
+                      <div className="grid grid-cols-2 gap-3 mb-6">
+                        <div className="h-16 bg-gray-100 rounded flex items-center justify-center">
+                          <div className="w-8 h-8 bg-blue-100 rounded-md"></div>
+                        </div>
+                        <div className="h-16 bg-gray-100 rounded flex items-center justify-center">
+                          <div className="w-8 h-8 bg-blue-100 rounded-md"></div>
+                        </div>
+                      </div>
+                      
+                      <div className="h-8 bg-blue-500 rounded-md w-1/2 mx-auto"></div>
                     </div>
                   </div>
-                </div>
                 
-                {/* Accessibility panel mockup */}
-                <motion.div 
-                  initial={{ x: 20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.9, duration: 0.5 }}
-                  className="absolute -bottom-24 -right-16 w-64 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden"
-                >
-                  <div className="bg-gradient-to-l from-blue-600 to-indigo-700 text-white p-3">
-                    <h3 className="font-bold text-sm">הגדרות נגישות</h3>
-                  </div>
-                  <div className="p-3">
-                    <div className="h-3 bg-gray-200 rounded w-3/4 mb-3"></div>
-                    <div className="h-3 bg-gray-200 rounded w-5/6 mb-3"></div>
-                    <div className="h-3 bg-gray-200 rounded w-4/5 mb-3"></div>
-                    <div className="h-6 bg-blue-100 rounded w-full mt-3"></div>
-                  </div>
-                </motion.div>
-              </animated.div>
+                  {/* Accessibility Widget Button */}
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.6, type: "spring" }}
+                    className="absolute bottom-4 right-4 w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full shadow-lg flex items-center justify-center text-white border border-white"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2a4 4 0 0 1 4 4M5 10a7 7 0 0 1 7-7"></path>
+                      <path d="M5 10a7 7 0 0 0 7 7"></path>
+                      <path d="M12 17a7 7 0 0 0 7-7"></path>
+                      <path d="M12 17v5"></path>
+                      <line x1="5" y1="10" x2="19" y2="10"></line>
+                    </svg>
+                  </motion.div>
+                  
+                  {/* Accessibility panel mockup - Realistic placement */}
+                  <motion.div 
+                    initial={{ y: 20, opacity: 0, scale: 0.9 }}
+                    animate={{ y: 0, opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.9, duration: 0.5 }}
+                    className="absolute bottom-4 right-16 w-56 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden"
+                  >
+                    <div className="bg-gradient-to-l from-blue-600 to-indigo-700 text-white p-2">
+                      <h3 className="font-bold text-xs">הגדרות נגישות</h3>
+                    </div>
+                    <div className="p-3">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center">
+                          <div className="w-3 h-3 bg-blue-100 rounded-full mr-2"></div>
+                          <div className="h-2 bg-gray-200 rounded w-16"></div>
+                        </div>
+                        <div className="w-8 h-4 bg-gray-200 rounded-full"></div>
+                      </div>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center">
+                          <div className="w-3 h-3 bg-blue-100 rounded-full mr-2"></div>
+                          <div className="h-2 bg-gray-200 rounded w-14"></div>
+                        </div>
+                        <div className="w-8 h-4 bg-gray-200 rounded-full"></div>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center">
+                          <div className="w-3 h-3 bg-blue-100 rounded-full mr-2"></div>
+                          <div className="h-2 bg-gray-200 rounded w-12"></div>
+                        </div>
+                        <div className="w-8 h-4 bg-blue-400 rounded-full"></div>
+                      </div>
+                      <div className="h-5 bg-blue-500 rounded w-full mt-3"></div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -523,21 +558,27 @@ const DemoPage: React.FC = () => {
                     <h3 className="text-xl font-bold text-gray-900">3 צעדים פשוטים להטמעה</h3>
                   </div>
                   
-                  <ol className="space-y-6 relative border-r border-blue-200 pr-6 ml-4 my-8">
-                    <li className="relative">
-                      <div className="absolute right-0 top-0 transform translate-x-1/2 -translate-y-1/4 w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">1</div>
-                      <h4 className="font-bold text-gray-900 mb-1">העתק את קוד ההטמעה</h4>
-                      <p className="text-sm text-gray-600">בחר את הגרסה הבסיסית או המתקדמת והעתק את קוד ה-HTML</p>
+                  <ol className="space-y-6 relative my-8">
+                    <li className="relative pr-10 mb-6">
+                      <div className="absolute right-0 top-2 w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">1</div>
+                      <div className="border-r border-blue-200 pr-3 mr-4">
+                        <h4 className="font-bold text-gray-900 mb-1">העתק את קוד ההטמעה</h4>
+                        <p className="text-sm text-gray-600">בחר את הגרסה הבסיסית או המתקדמת והעתק את קוד ה-HTML</p>
+                      </div>
                     </li>
-                    <li className="relative">
-                      <div className="absolute right-0 top-0 transform translate-x-1/2 -translate-y-1/4 w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">2</div>
-                      <h4 className="font-bold text-gray-900 mb-1">הוסף לקוד האתר</h4>
-                      <p className="text-sm text-gray-600">הדבק את הקוד בתגית &lt;head&gt; או &lt;body&gt; של האתר שלך</p>
+                    <li className="relative pr-10 mb-6">
+                      <div className="absolute right-0 top-2 w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">2</div>
+                      <div className="border-r border-blue-200 pr-3 mr-4">
+                        <h4 className="font-bold text-gray-900 mb-1">הוסף לקוד האתר</h4>
+                        <p className="text-sm text-gray-600">הדבק את הקוד בתגית &lt;head&gt; או &lt;body&gt; של האתר שלך</p>
+                      </div>
                     </li>
-                    <li className="relative">
-                      <div className="absolute right-0 top-0 transform translate-x-1/2 -translate-y-1/4 w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">3</div>
-                      <h4 className="font-bold text-gray-900 mb-1">בדוק את התוצאה</h4>
-                      <p className="text-sm text-gray-600">רענן את האתר וודא שכפתור הנגישות מופיע כנדרש</p>
+                    <li className="relative pr-10">
+                      <div className="absolute right-0 top-2 w-7 h-7 rounded-full bg-blue-600 text-white flex items-center justify-center text-xs font-bold">3</div>
+                      <div className="border-r border-blue-200 pr-3 mr-4">
+                        <h4 className="font-bold text-gray-900 mb-1">בדוק את התוצאה</h4>
+                        <p className="text-sm text-gray-600">רענן את האתר וודא שכפתור הנגישות מופיע כנדרש</p>
+                      </div>
                     </li>
                   </ol>
                 </div>
