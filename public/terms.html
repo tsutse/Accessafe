@@ -3,215 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>תנאי שימוש וכתב ויתור - כלי נגישות לאתרים בעברית</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>תנאי שימוש וכתב ויתור | כלי נגישות לאתרים בעברית</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap');
+    
+    :root {
+      --primary: #3b82f6;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --accent: #f97316;
+      --border: #e2e8f0;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: 'Heebo', Arial, sans-serif;
+      font-family: 'Heebo', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
       line-height: 1.6;
-      color: #333;
+    }
+    
+    .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 20px;
-      background-color: #f9fafb;
+      padding: 2rem 1rem;
     }
-    h1, h2, h3 {
-      color: #1e293b;
+    
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
     }
+    
     h1 {
-      border-bottom: 2px solid #3b82f6;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
     }
-    .card {
+    
+    .subtitle {
+      font-size: 1.1rem;
+      color: #64748b;
+    }
+    
+    section {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
       background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 25px;
-      margin-bottom: 30px;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
-    .important {
-      background-color: #fff0f0;
-      border: 1px solid #fecaca;
-      border-right: 4px solid #ef4444;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 4px;
+    
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
     }
-    .button {
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-right: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .highlight {
+      background-color: #fff9db;
+      padding: 1rem;
+      border-right: 4px solid var(--accent);
+      margin-bottom: 1rem;
+    }
+    
+    .back-button {
       display: inline-block;
-      background-color: #3b82f6;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary);
       color: white;
-      padding: 10px 20px;
-      border-radius: 4px;
       text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-      transition: all 0.2s ease;
-      border: none;
-      cursor: pointer;
+      border-radius: 0.25rem;
+      font-weight: 500;
+      transition: background-color 0.2s ease;
     }
-    .button:hover {
+    
+    .back-button:hover {
       background-color: #2563eb;
-      transform: translateY(-2px);
     }
-    .button.secondary {
-      background-color: #e2e8f0;
-      color: #475569;
-    }
-    .button.secondary:hover {
-      background-color: #cbd5e1;
-    }
-    .checkbox-container {
-      margin: 20px 0;
-    }
-    .checkbox-container label {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-    .checkbox-container input {
-      margin-left: 10px;
-      width: 18px;
-      height: 18px;
-    }
-    #downloadSection {
-      display: none;
-    }
-    .success {
-      background-color: #f0fdf4;
-      border: 1px solid #bbf7d0;
-      border-right: 4px solid #10b981;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 4px;
-    }
-    code {
-      background-color: #f1f5f9;
-      padding: 2px 5px;
-      border-radius: 3px;
-      font-family: monospace;
-      display: block;
-      white-space: pre-wrap;
-      padding: 15px;
-      margin: 15px 0;
-      border: 1px solid #ddd;
-      direction: ltr;
-      text-align: left;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: #3b82f6;
-      text-decoration: none;
-    }
-    .back-link:hover {
-      text-decoration: underline;
+    
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #64748b;
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>תנאי שימוש וכתב ויתור</h1>
+  <div class="container">
+    <header>
+      <h1>תנאי שימוש וכתב ויתור - כלי נגישות לאתרים בעברית</h1>
+      <p class="subtitle">גרסה 1.0.0 - מעודכן לתאריך 15.03.2025</p>
+    </header>
     
-    <div class="important">
-      <h3>חשוב: יש לקרוא את כל הסכם השימוש לפני השימוש בכלי הנגישות</h3>
-      <p>השימוש בכלי זה מהווה הסכמה לכל התנאים המפורטים במסמך זה.</p>
-    </div>
-    
-    <h2>הצהרת ויתור על אחריות</h2>
-    <p>כלי הנגישות לאתרים בעברית (להלן "הכלי") מסופק "כפי שהוא" (AS IS), ללא כל אחריות מכל סוג שהוא, מפורשת או משתמעת. מפתחי הכלי אינם נושאים באחריות כלשהי לגבי התאמת הכלי למטרה מסוימת, לתקינות פעולתו, לביצועיו או לתוצאות השימוש בו.</p>
-    
-    <p>באופן ספציפי וללא הגבלה, המפתחים אינם מתחייבים כי:</p>
-    <ul>
-      <li>הכלי יעמוד בכל דרישות החוק והתקנות הנוגעות לנגישות, לרבות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013, והתקן הישראלי 5568.</li>
-      <li>הכלי יתפקד ללא שגיאות או הפרעות.</li>
-      <li>הכלי יהיה תואם לכל דפדפן, מערכת הפעלה או תצורת חומרה.</li>
-      <li>הכלי לא יגרום לבעיות או תקלות באתרים בהם הוא מוטמע.</li>
-    </ul>
-    
-    <h2>הסרת אחריות משפטית</h2>
-    <p>בעלי האתר המטמיעים את הכלי (להלן "המשתמש") מסכימים ומתחייבים כי:</p>
-    <ul>
-      <li>האחריות המלאה והבלעדית לעמידה בדרישות החוק והתקנות הנוגעות לנגישות חלה על המשתמש בלבד.</li>
-      <li>הטמעת הכלי אינה פוטרת את המשתמש מחובתו לוודא עמידה בכל דרישות החוק והתקנות.</li>
-      <li>המשתמש לא יטען כל טענה ו/או תביעה כנגד מפתחי הכלי בגין כל נזק, הפסד, חבות, קנס או הוצאה שייגרמו לו או לצד שלישי כתוצאה מהשימוש בכלי או מאי-עמידה בדרישות הנגישות.</li>
-      <li>המשתמש מתחייב לשפות את מפתחי הכלי בגין כל תביעה, דרישה, חבות או הוצאה שתוגש נגדם בקשר עם השימוש בכלי.</li>
-    </ul>
-    
-    <h2>תקן ישראלי 5568 ו-WCAG 2.0 ברמת AA</h2>
-    <p>הכלי פותח תוך התייחסות לדרישות התקן הישראלי 5568 (המבוסס על WCAG 2.0 ברמת AA), אך השימוש בכלי אינו מבטיח עמידה מלאה בתקן זה.</p>
-    
-    <p>המשתמש מצהיר כי הוא מבין שהשימוש בכלי הוא רק חלק מהפתרון הכולל לנגישות אתרים, וכי נדרשים צעדים נוספים להשגת עמידה מלאה בתקנים ובחוקים.</p>
-    
-    <h2>שינויים בכלי ובתנאי השימוש</h2>
-    <p>מפתחי הכלי שומרים לעצמם את הזכות לשנות, לעדכן או להפסיק את הכלי בכל עת, עם או בלי הודעה מוקדמת, ללא כל חבות כלפי המשתמש או צד שלישי כלשהו.</p>
-    
-    <p>כמו כן, תנאי שימוש אלה עשויים להשתנות מעת לעת לפי שיקול דעתם הבלעדי של מפתחי הכלי. אחריות המשתמש לבדוק שינויים אלה באופן תקופתי.</p>
-    
-    <h2>הגבלת השימוש</h2>
-    <p>המשתמש מתחייב שלא לשנות, להעתיק, להפיץ, לשדר, להציג, לבצע, לשכפל, לפרסם, לרשיון, ליצור עבודות נגזרות, להעביר או למכור כל מידע או תוכן הקשור לכלי ללא הסכמה מפורשת בכתב מאת מפתחי הכלי.</p>
-    
-    <div class="checkbox-container">
-      <h2>אישור תנאי השימוש</h2>
-      <label>
-        <input type="checkbox" id="termsCheckbox1"> אני מאשר/ת כי קראתי והבנתי את תנאי השימוש וכתב הויתור
-      </label>
-      <label>
-        <input type="checkbox" id="termsCheckbox2"> אני מסכים/ה ומקבל/ת על עצמי את מלוא האחריות לשימוש בכלי ולעמידה בדרישות החוק
-      </label>
-      <label>
-        <input type="checkbox" id="termsCheckbox3"> אני מסכים/ה כי לא תהיה לי כל טענה או תביעה כלפי מפתחי הכלי בקשר לשימוש בו
-      </label>
+    <section>
+      <h2>הקדמה</h2>
+      <p>מסמך זה מהווה הסכם משפטי בינך לבין המפתחים והמפיצים של כלי הנגישות לאתרים בעברית (להלן: "הכלי"). השימוש בכלי מהווה הסכמה לכל התנאים המפורטים במסמך זה.</p>
       
-      <button id="approveButton" class="button" disabled>אני מאשר/ת את כל התנאים</button>
-    </div>
+      <div class="highlight">
+        <p><strong>חשוב לדעת:</strong> כלי זה נועד לסייע לבעלי אתרים להנגיש את האתר שלהם, אך אינו מהווה פתרון מלא לעמידה בחוק הנגישות הישראלי. האחריות המלאה לעמידה בדרישות החוק חלה על בעל האתר.</p>
+      </div>
+    </section>
     
-    <div id="downloadSection" class="success">
-      <h2>הורדת קוד ההטמעה</h2>
-      <p>כעת באפשרותך להשתמש בקוד ההטמעה עבור האתר שלך:</p>
+    <section>
+      <h2>רישיון שימוש</h2>
+      <p>הכלי מופץ תחת רישיון MIT, המאפשר:</p>
+      <ul>
+        <li>שימוש חופשי בכלי למטרות מסחריות ופרטיות</li>
+        <li>שינוי וביצוע התאמות בקוד הכלי</li>
+        <li>הפצה מחדש של הכלי במקור או בגרסה מעובדת</li>
+      </ul>
+      <p>כל זאת בתנאי שהודעת זכויות היוצרים המקורית והרישיון המקורי יישמרו בכל העתק או חלק מהותי של הכלי.</p>
+    </section>
+    
+    <section>
+      <h2>כתב ויתור משפטי</h2>
+      <p>הכלי מסופק "כפי שהוא" (AS IS), ללא כל אחריות מכל סוג שהוא, מפורשת או משתמעת, לרבות, אך לא רק, אחריות לסחירות, התאמה למטרה מסוימת, או אי-הפרת זכויות.</p>
+      <p>בשום מקרה לא יהיו המפתחים או בעלי זכויות היוצרים אחראים לכל תביעה, נזקים או חבות אחרת, בין אם בפעולה של חוזה, עוולה או אחרת, הנובעים מתוך, או בקשר עם הכלי או השימוש או עסקאות אחרות בכלי.</p>
       
-      <h3>קוד בסיסי:</h3>
-      <code>&lt;script src="https://your-domain.com/dist/hebrew-a11y.min.js" defer&gt;&lt;/script&gt;</code>
-      
-      <h3>קוד מתקדם (עם הגדרת מיקום):</h3>
-      <code>&lt;script src="https://your-domain.com/dist/hebrew-a11y.min.js" data-position="bottom-right" defer&gt;&lt;/script&gt;</code>
-      
-      <p><strong>חשוב:</strong> יש להחליף את "your-domain.com" בכתובת השרת האמיתית שלך.</p>
-      
-      <p>תודה שבחרת להשתמש בכלי הנגישות שלנו!</p>
-      
-      <a href="/" class="back-link">חזרה לדף הראשי &rarr;</a>
-    </div>
+      <div class="highlight">
+        <p><strong>ויתור ספציפי בנוגע לנגישות:</strong> למרות שהכלי פותח בהתאם לעקרונות תקן WCAG 2.0 ברמת AA ובהתאם לדרישות תקן ישראלי 5568, איננו מתחייבים כי השימוש בכלי יבטיח עמידה מלאה בכל דרישות החוק הישראלי בנושא נגישות אתרים או בכל תקן נגישות אחר.</p>
+        <p>בעל האתר נושא באחריות הבלעדית לוודא כי האתר שלו עומד בכל דרישות החוק הרלוונטיות לנגישות.</p>
+      </div>
+    </section>
+    
+    <section>
+      <h2>שימוש בכלי</h2>
+      <p>השימוש בכלי מותר בכפוף לתנאים הבאים:</p>
+      <ol>
+        <li>אין להסיר את הודעת זכויות היוצרים או כתב הויתור מקוד הכלי</li>
+        <li>אין להציג מצגי שווא לגבי יכולות הכלי או מידת התאימות שלו לחוקים ותקנות</li>
+        <li>אין להשתמש בשם המפתחים או המפיצים של הכלי לצורך קידום או אישור של מוצרים נגזרים ללא קבלת אישור מפורש בכתב</li>
+        <li>מומלץ להתייעץ עם מומחה נגישות ו/או עורך דין המתמחה בתחום הנגישות לפני ההסתמכות על הכלי כפתרון בלעדי לדרישות החוק</li>
+      </ol>
+    </section>
+    
+    <section>
+      <h2>התחייבויות בעל האתר</h2>
+      <p>בשימוש בכלי, בעל האתר מתחייב:</p>
+      <ul>
+        <li>לבצע בדיקות נגישות תקופתיות באתר</li>
+        <li>לעדכן את הכלי לגרסה העדכנית ביותר כשזו זמינה</li>
+        <li>לספק דרכי יצירת קשר זמינים למשתמשים שנתקלים בבעיות נגישות</li>
+        <li>לטפל בתלונות בנושא נגישות בזמן סביר</li>
+        <li>לא להשתמש בכלי כתחליף לתכנון ופיתוח אתר נגיש מלכתחילה</li>
+      </ul>
+    </section>
+    
+    <section>
+      <h2>שינויים בתנאי השימוש</h2>
+      <p>אנו שומרים את הזכות לשנות את תנאי השימוש בכל עת. שינויים אלה ייכנסו לתוקף מיד עם פרסומם באתר זה. המשך השימוש בכלי לאחר פרסום השינויים מהווה הסכמה לתנאים החדשים.</p>
+    </section>
+    
+    <a href="/" class="back-button">חזרה לדף הבית</a>
+    
+    <footer>
+      <p>© 2025 כלי נגישות לאתרים בעברית - כל הזכויות שמורות</p>
+    </footer>
   </div>
-
-  <script>
-    // Enable the approve button only if all checkboxes are checked
-    function checkAllChecked() {
-      const checkbox1 = document.getElementById('termsCheckbox1');
-      const checkbox2 = document.getElementById('termsCheckbox2');
-      const checkbox3 = document.getElementById('termsCheckbox3');
-      const approveButton = document.getElementById('approveButton');
-      
-      if (checkbox1.checked && checkbox2.checked && checkbox3.checked) {
-        approveButton.disabled = false;
-      } else {
-        approveButton.disabled = true;
-      }
-    }
-    
-    // Add event listeners to all checkboxes
-    document.getElementById('termsCheckbox1').addEventListener('change', checkAllChecked);
-    document.getElementById('termsCheckbox2').addEventListener('change', checkAllChecked);
-    document.getElementById('termsCheckbox3').addEventListener('change', checkAllChecked);
-    
-    // Show download section when approve button is clicked
-    document.getElementById('approveButton').addEventListener('click', function() {
-      document.getElementById('downloadSection').style.display = 'block';
-      // Scroll to download section
-      document.getElementById('downloadSection').scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
 </body>
 </html>

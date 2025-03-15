@@ -4,8 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const DemoPage: React.FC = () => {
-  const embeddableScript = '<script src="https://your-domain.com/dist/hebrew-a11y.min.js" defer></script>';
-  const advancedScript = '<script src="https://your-domain.com/dist/hebrew-a11y.min.js" data-position="bottom-left" defer></script>';
+  const embeddableScript = '<script src="/dist/hebrew-a11y.min.js" defer></script>';
+  const advancedScript = '<script src="/dist/hebrew-a11y.min.js" data-position="bottom-left" defer></script>';
 
   // Function to copy appropriate script based on selected tab
   const copyScript = (advanced = false) => {
@@ -120,18 +120,7 @@ const DemoPage: React.FC = () => {
                   
                   <div className="grid grid-cols-1 gap-3 mb-6">
                     <button 
-                      onClick={() => {
-                        // Copy the script to clipboard
-                        navigator.clipboard.writeText(embeddableScript)
-                          .then(() => {
-                            // Show a simple alert or you could use a toast notification
-                            alert('הקוד הועתק ללוח!');
-                          })
-                          .catch(err => {
-                            console.error('Failed to copy: ', err);
-                            alert('העתקה נכשלה, נסה להעתיק ידנית');
-                          });
-                      }} 
+                      onClick={() => copyScript(false)} 
                       className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-md inline-flex items-center justify-center transition duration-300"
                     >
                       <span>העתק קוד להטמעה</span>
