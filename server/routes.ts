@@ -9,6 +9,40 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve static HTML files
+  app.get('/terms.html', (req, res) => {
+    const filePath = path.join(__dirname, '../public/terms.html');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'text/html');
+      const content = fs.readFileSync(filePath, 'utf8');
+      res.send(content);
+    } else {
+      res.status(404).send('File not found');
+    }
+  });
+  
+  app.get('/wcag-compliance.html', (req, res) => {
+    const filePath = path.join(__dirname, '../public/wcag-compliance.html');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'text/html');
+      const content = fs.readFileSync(filePath, 'utf8');
+      res.send(content);
+    } else {
+      res.status(404).send('File not found');
+    }
+  });
+  
+  app.get('/implementation-example.html', (req, res) => {
+    const filePath = path.join(__dirname, '../public/implementation-example.html');
+    if (fs.existsSync(filePath)) {
+      res.setHeader('Content-Type', 'text/html');
+      const content = fs.readFileSync(filePath, 'utf8');
+      res.send(content);
+    } else {
+      res.status(404).send('File not found');
+    }
+  });
+
   // Serve the embeddable script file
   app.get('/dist/hebrew-a11y.min.js', (req, res) => {
     // Read the minified script from the file
