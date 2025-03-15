@@ -161,7 +161,7 @@ const FeatureControls: React.FC = () => {
       {/* Reset Button */}
       <button 
         onClick={resetSettings}
-        className="w-full py-2 bg-a11y-dark text-white rounded hover:bg-a11y-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all"
+        className="w-full py-2 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all border border-gray-300"
       >
         איפוס הגדרות
       </button>

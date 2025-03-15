@@ -9,7 +9,7 @@ const AccessibilityButton: React.FC<AccessibilityButtonProps> = ({ onClick, isOp
   return (
     <button 
       aria-label="תפריט נגישות"
-      className={`flex items-center justify-center w-14 h-14 bg-a11y-dark text-white rounded-full shadow-lg hover:bg-a11y-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ${isOpen ? 'rotate-90' : ''}`}
+      className={`flex items-center justify-center w-14 h-14 bg-a11y-dark text-white rounded-full shadow-lg border-2 border-black hover:bg-a11y-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ${isOpen ? 'rotate-90' : ''}`}
       onClick={onClick}
     >
       <svg 
