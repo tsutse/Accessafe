@@ -1,0 +1,45 @@
+Essential Features & Requirements:
+
+Accessibility Compliance:
+
+Must include all essential features required by Israeli accessibility laws and standards (including WCAG 2.1 compliance guidelines).
+
+Should cover features such as font size adjustments, color contrast controls, grayscale mode, link highlighting, keyboard navigation, cursor adjustments, animations control, and text-to-speech capabilities (in Hebrew).
+
+Easy Integration & Usage:
+
+Provide a simple JavaScript embed code (<script>...</script>) for users, ensuring straightforward implementation without complex configurations.
+
+Ensure the accessibility tool activates seamlessly upon page load and does not negatively affect site performance or loading speed.
+
+Interface Design:
+
+Utilize a clean, minimalist design approach with neutral colors (e.g., grayscale, whites, blacks, subtle shades of grey) for the accessibility tool menu and its icon. Avoid bright or brand-specific colors to maintain neutrality.
+
+Provide a clear, intuitive, and user-friendly interface suitable for users with various disabilities.
+
+Language and RTL Support:
+
+Fully localized and optimized for Hebrew language content.
+
+Properly handle right-to-left (RTL) text direction to ensure compatibility and readability.
+
+Performance and Compatibility:
+
+Ensure full compatibility across major browsers (Chrome, Firefox, Safari, Edge) and responsive performance on desktop, tablet, and mobile devices.
+
+The embedded script should be lightweight, optimized, and should not significantly impact website loading or interactivity.
+
+Accessibility Widget Behavior:
+
+Allow users to activate or deactivate features individually through the widget.
+
+Include persistence of user-selected preferences through cookies or local storage.
+
+Documentation & Usage Instructions:
+
+Provide clear documentation explaining how to integrate and customize the accessibility tool.
+
+Ensure documentation is straightforward and accessible, with examples and troubleshooting guidelines.
+
+The final deliverable must be an accessible, reliable, and fully legal-compliant tool that website owners can confidently integrate into their sites at no cost.
