@@ -116,9 +116,9 @@ const DemoPage: React.FC = () => {
                   className="w-10 h-10 flex items-center justify-center mr-3"
                 >
                   <img 
-                    src="/logo-hebrew.png" 
+                    src="/logo.svg" 
                     alt="לוגו נגישות עברית" 
-                    className="w-32 h-10" 
+                    className="w-10 h-10" 
                   />
                 </motion.div>
                 <motion.h1
@@ -1121,9 +1121,9 @@ const DemoPage: React.FC = () => {
             <div>
               <div className="flex items-center mb-6">
                 <img 
-                  src="/logo-hebrew.png" 
+                  src="/logo.svg" 
                   alt="לוגו נגישות עברית" 
-                  className="w-32 h-10 mr-3" 
+                  className="w-10 h-10 mr-3" 
                 />
                 <h3 className="text-xl font-bold">נגישות עברית</h3>
               </div>
