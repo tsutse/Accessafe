@@ -117,7 +117,7 @@ const DemoPage: React.FC = () => {
                 >
                   <img
                     src="/favicon.ico"
-                    alt="לוגו נגישות עברית"
+                    alt="Accessafe logo"
                     className="w-10 h-10"
                   />
                 </motion.div>
@@ -126,7 +126,7 @@ const DemoPage: React.FC = () => {
                   animate={{ opacity: 1, x: 0 }}
                   className="text-xl md:text-2xl font-bold bg-gradient-to-l from-blue-600 to-indigo-700 bg-clip-text text-transparent"
                 >
-                  נגישות עברית
+                  Accessafe
                 </motion.h1>
               </div>
             </div>
@@ -1122,10 +1122,10 @@ const DemoPage: React.FC = () => {
               <div className="flex items-center mb-6">
                 <img
                   src="/favicon.ico"
-                  alt="לוגו נגישות עברית"
+                  alt="Accessafe logo"
                   className="w-10 h-10 mr-3"
                 />
-                <h3 className="text-xl font-bold">נגישות עברית</h3>
+                <h3 className="text-xl font-bold">Accessafe</h3>
               </div>
               <p className="text-gray-400 mb-6">
                 כלי נגישות מתקדם לאתרים בעברית בהתאם לתקן הישראלי 5568.
