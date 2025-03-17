@@ -123,9 +123,9 @@ const DemoPage: React.FC = () => {
                     className="w-10 h-10"
                     aria-label="Accessafe logo"
                   >
-                    <rect width="512" height="512" fill="#4F46E5" rx="100" />
-                    <text x="256" y="300" fontFamily="Arial, sans-serif" fontSize="160" fontWeight="bold" textAnchor="middle" fill="white">A</text>
-                    <path d="M150 360 H362" stroke="white" strokeWidth="20" strokeLinecap="round" />
+                    <rect width="512" height="512" fill="#6366F1" rx="80" />
+                    <path d="M256 120 L362 392 H150 L256 120Z" fill="white" />
+                    <path d="M205 310 H310" stroke="#6366F1" strokeWidth="30" strokeLinecap="round" />
                   </svg>
                 </motion.div>
                 <motion.h1
@@ -1135,9 +1135,9 @@ const DemoPage: React.FC = () => {
                   className="w-10 h-10 mr-3"
                   aria-label="Accessafe logo"
                 >
-                  <rect width="512" height="512" fill="#4F46E5" rx="100" />
-                  <text x="256" y="300" fontFamily="Arial, sans-serif" fontSize="160" fontWeight="bold" textAnchor="middle" fill="white">A</text>
-                  <path d="M150 360 H362" stroke="white" strokeWidth="20" strokeLinecap="round" />
+                  <rect width="512" height="512" fill="#6366F1" rx="80" />
+                  <path d="M256 120 L362 392 H150 L256 120Z" fill="white" />
+                  <path d="M205 310 H310" stroke="#6366F1" strokeWidth="30" strokeLinecap="round" />
                 </svg>
                 <h3 className="text-xl font-bold">Accessafe</h3>
               </div>
