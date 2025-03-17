@@ -116,7 +116,7 @@ const DemoPage: React.FC = () => {
                   className="w-10 h-10 flex items-center justify-center mr-3"
                 >
                   <img 
-                    src="/new-logo.svg" 
+                    src="/logo-hebrew.png" 
                     alt="לוגו נגישות עברית" 
                     className="w-32 h-10" 
                   />
@@ -1121,7 +1121,7 @@ const DemoPage: React.FC = () => {
             <div>
               <div className="flex items-center mb-6">
                 <img 
-                  src="/new-logo.svg" 
+                  src="/logo-hebrew.png" 
                   alt="לוגו נגישות עברית" 
                   className="w-32 h-10 mr-3" 
                 />
