@@ -115,10 +115,10 @@ const DemoPage: React.FC = () => {
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
                   className="w-10 h-10 flex items-center justify-center mr-3"
                 >
-                  <img 
-                    src="/logo.svg" 
-                    alt="לוגו נגישות עברית" 
-                    className="w-10 h-10" 
+                  <img
+                    src="/favicon.ico"
+                    alt="לוגו נגישות עברית"
+                    className="w-10 h-10"
                   />
                 </motion.div>
                 <motion.h1
@@ -1120,10 +1120,10 @@ const DemoPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
               <div className="flex items-center mb-6">
-                <img 
-                  src="/logo.svg" 
-                  alt="לוגו נגישות עברית" 
-                  className="w-10 h-10 mr-3" 
+                <img
+                  src="/favicon.ico"
+                  alt="לוגו נגישות עברית"
+                  className="w-10 h-10 mr-3"
                 />
                 <h3 className="text-xl font-bold">נגישות עברית</h3>
               </div>
