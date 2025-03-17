@@ -113,13 +113,12 @@ const DemoPage: React.FC = () => {
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                  className="w-10 h-10 flex items-center justify-center mr-3 overflow-hidden"
+                  className="w-10 h-10 flex items-center justify-center mr-3"
                 >
                   <img 
-                    src="/logo-large.png" 
+                    src="/logo.svg" 
                     alt="לוגו נגישות עברית" 
-                    className="w-full h-full object-contain object-center max-w-full max-h-full" 
-                    style={{ width: '100%', height: 'auto' }}
+                    className="w-10 h-10" 
                   />
                 </motion.div>
                 <motion.h1
