@@ -116,7 +116,7 @@ const DemoPage: React.FC = () => {
                   className="w-10 h-10 flex items-center justify-center mr-3"
                 >
                   <img
-                    src="/favicon.ico"
+                    src="/logo.png"
                     alt="Accessafe logo"
                     className="w-10 h-10"
                   />
@@ -1121,7 +1121,7 @@ const DemoPage: React.FC = () => {
             <div>
               <div className="flex items-center mb-6">
                 <img
-                  src="/favicon.ico"
+                  src="/logo.png"
                   alt="Accessafe logo"
                   className="w-10 h-10 mr-3"
                 />
