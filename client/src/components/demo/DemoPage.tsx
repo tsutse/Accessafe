@@ -115,11 +115,18 @@ const DemoPage: React.FC = () => {
                   transition={{ type: "spring", stiffness: 260, damping: 20 }}
                   className="w-10 h-10 flex items-center justify-center mr-3"
                 >
-                  <img
-                    src="/accessafe-logo.svg"
-                    alt="Accessafe logo"
+                  <svg 
+                    width="40" 
+                    height="40" 
+                    viewBox="0 0 512 512" 
+                    xmlns="http://www.w3.org/2000/svg"
                     className="w-10 h-10"
-                  />
+                    aria-label="Accessafe logo"
+                  >
+                    <rect width="512" height="512" fill="#4F46E5" rx="100" />
+                    <text x="256" y="300" fontFamily="Arial, sans-serif" fontSize="160" fontWeight="bold" textAnchor="middle" fill="white">A</text>
+                    <path d="M150 360 H362" stroke="white" strokeWidth="20" strokeLinecap="round" />
+                  </svg>
                 </motion.div>
                 <motion.h1
                   initial={{ opacity: 0, x: -20 }}
@@ -1120,11 +1127,18 @@ const DemoPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
               <div className="flex items-center mb-6">
-                <img
-                  src="/accessafe-logo.svg"
-                  alt="Accessafe logo"
+                <svg 
+                  width="40" 
+                  height="40" 
+                  viewBox="0 0 512 512" 
+                  xmlns="http://www.w3.org/2000/svg"
                   className="w-10 h-10 mr-3"
-                />
+                  aria-label="Accessafe logo"
+                >
+                  <rect width="512" height="512" fill="#4F46E5" rx="100" />
+                  <text x="256" y="300" fontFamily="Arial, sans-serif" fontSize="160" fontWeight="bold" textAnchor="middle" fill="white">A</text>
+                  <path d="M150 360 H362" stroke="white" strokeWidth="20" strokeLinecap="round" />
+                </svg>
                 <h3 className="text-xl font-bold">Accessafe</h3>
               </div>
               <p className="text-gray-400 mb-6">
