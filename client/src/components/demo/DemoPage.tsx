@@ -109,25 +109,7 @@ const DemoPage: React.FC = () => {
             <div className="flex items-center">
               {/* Logo */}
               <div className="flex items-center">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
-                  className="w-10 h-10 flex items-center justify-center mr-3"
-                >
-                  <svg 
-                    width="40" 
-                    height="40" 
-                    viewBox="0 0 512 512" 
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-10 h-10"
-                    aria-label="Accessafe logo"
-                  >
-                    <rect width="512" height="512" fill="#6366F1" rx="80" />
-                    <path d="M256 120 L362 392 H150 L256 120Z" fill="white" />
-                    <path d="M205 310 H310" stroke="#6366F1" strokeWidth="30" strokeLinecap="round" />
-                  </svg>
-                </motion.div>
+
                 <motion.h1
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -1127,18 +1109,7 @@ const DemoPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div>
               <div className="flex items-center mb-6">
-                <svg 
-                  width="40" 
-                  height="40" 
-                  viewBox="0 0 512 512" 
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-10 h-10 mr-3"
-                  aria-label="Accessafe logo"
-                >
-                  <rect width="512" height="512" fill="#6366F1" rx="80" />
-                  <path d="M256 120 L362 392 H150 L256 120Z" fill="white" />
-                  <path d="M205 310 H310" stroke="#6366F1" strokeWidth="30" strokeLinecap="round" />
-                </svg>
+
                 <h3 className="text-xl font-bold">Accessafe</h3>
               </div>
               <p className="text-gray-400 mb-6">
